@@ -1,5 +1,4 @@
 body{
-  margin-top:20px;
   background: #f8f8f8;
 }
 
@@ -23,19 +22,6 @@ body{
   transition: all ease-in-out 0.2s;
   font-size: 14px;
   padding-top: 12px;
-}
-
-.card {
-  margin-top: 15px;
-}
-
-.card:hover .float-end {
-  color: rgb(109, 109, 109); /* Change the color to your desired color */
-}
-
-.error {
-  font-size: 12px;
-  color: red;
 }
 
 div.checker {

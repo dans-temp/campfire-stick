@@ -1,3 +1,4 @@
+import './Todo.css';
 import React, { useState, useEffect } from 'react'
 import { collection, addDoc, serverTimestamp, getDocs, doc, deleteDoc, orderBy, query } from 'firebase/firestore'
 
@@ -72,19 +73,19 @@ const Todo = () => {
 
   return (
     <>
+    <div className='bg'>
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <div className="card card-white">
-              <div className="card-body">
+ 
+              <div className="card-body center-button">
                 <button
                   data-bs-toggle="modal"
                   data-bs-target="#addModal"
                   type="button"
-                  className="btn btn-info">Add To Story
+                  className="btn button">Add To Story
                 </button>
               </div>
-            </div>
 
                 {todos.map(({ todo, id, username, timestamp }) =>
                   <div className="card card-white">
@@ -100,15 +101,25 @@ const Todo = () => {
                             className="btn btn-danger float-end"
                             onClick={() => deleteTodo(id)}
                           >Delete</button>
-                          <i className="float-end">{new Date(timestamp.seconds * 1000).toLocaleString()} - {username}</i>
+                          <i className="float-end">- {username}, {new Date(timestamp.seconds * 1000).toLocaleString()}</i>
                         </div>
                       </div>
                   </div>
               </div>
                 )}
+
+              <div className="card-body center-button">
+                <button
+                  data-bs-toggle="modal"
+                  data-bs-target="#addModal"
+                  type="button"
+                  className="btn button">Add To Story
+                </button>
+              </div>
           </div>
         </div>
       </div>
+    </div>
 
       {/* Modal */}
       <div className="modal fade" id="addModal" tabIndex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
@@ -116,7 +127,7 @@ const Todo = () => {
           <form className="d-flex" onSubmit={submitTodo}>
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="addModalLabel">Add Todo</h5>
+                <h5 className="modal-title" id="addModalLabel">Add To Story</h5>
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div className="modal-body">
@@ -145,8 +156,7 @@ const Todo = () => {
               </div>
               <p className="error">{error}</p>
               <div className="modal-footer">
-                <button className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button className="btn btn-primary">Add</button>
+                <button className="btn button">Add</button>
               </div>
             </div>
           </form>
