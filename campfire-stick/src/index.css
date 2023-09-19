@@ -1,0 +1,58 @@
+body{
+  margin-top:20px;
+  background: #f8f8f8;
+}
+
+.todo-list {
+  margin: 10px 0
+}
+
+.todo-item {
+  text-align: left;
+}
+
+.todo-list .todo-item {
+  padding: 15px;
+  margin: 5px 0;
+  border-radius: 0;
+
+}
+
+.float-end {
+  color: #ddd;
+  transition: all ease-in-out 0.2s;
+  font-size: 14px;
+  padding-top: 12px;
+}
+
+.card {
+  margin-top: 15px;
+}
+
+.card:hover .float-end {
+  color: rgb(109, 109, 109); /* Change the color to your desired color */
+}
+
+.error {
+  font-size: 12px;
+  color: red;
+}
+
+div.checker {
+  width: 18px;
+  height: 18px
+}
+
+div.checker input{
+  width: 18px;
+  height: 18px
+}
+
+ div.checker {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.done {
+  text-decoration: line-through;
+}
