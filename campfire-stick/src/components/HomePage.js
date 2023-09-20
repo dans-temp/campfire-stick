@@ -16,7 +16,7 @@ function HomePage() {
         <p>An Online Comunity Storytelling Website</p>
       </header>
       <section className="features">
-        <Link to="/campfire-stick-history">
+        <Link to="/history">
           <div className="feature">
             <div className="feature-image">
               <img src={image1} alt="Feature 1" />
@@ -26,7 +26,7 @@ function HomePage() {
             <p>Read past stories.</p>
           </div>
         </Link>
-        <Link to="/campfire-stick-todo">
+        <Link to="/story">
         <div className="feature">
         <h2>Hold the Campfire Stick</h2>
           <p>Write your part into the story being told.</p>
@@ -35,7 +35,7 @@ function HomePage() {
           </div>
         </div>
         </Link>
-        <Link to="/campfire-stick-about">
+        <Link to="/about">
           <div className="feature">
             <div className="feature-image">
               <img src={image3} alt="Feature 3" />

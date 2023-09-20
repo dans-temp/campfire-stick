@@ -9,22 +9,22 @@ function Navbar() {
     <nav className="rye-font">
       <ul>
           <li>
-            <Link to="/campfire-stick/">
+            <Link to="/home">
               <div>Home</div>
             </Link>
           </li>
           <li>
-            <Link to="/campfire-stick-history">
+            <Link to="/history">
               <div>History</div>
             </Link>
           </li>
           <li>
-            <Link to="/campfire-stick-todo">
+            <Link to="/story">
               <div>Story</div>
             </Link>
           </li>
           <li>
-            <Link to="/campfire-stick-about">
+            <Link to="/about">
               <div>About</div>
             </Link>
           </li>

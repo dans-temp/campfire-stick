@@ -69,7 +69,7 @@ const Todo = () => {
         console.log(todos.length);
         if(todos.length === 9)
         {
-          window.location.assign("#/campfire-stick-history")
+          window.location.assign("#/history")
           window.location.reload();
         }
         else
