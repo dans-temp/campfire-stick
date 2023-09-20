@@ -42,7 +42,7 @@ function HomePage() {
           </div>
           <div className="about-box">
             <h2>Who Made the Site</h2>
-            <p>This site is made by me: Daniel Goresht.  It was made using React for the front end, and Firebase for the back end. Also all images were generated uniquely using AI for this website</p>
+            <p>This site is made by me, Daniel Goresht.  It was made using React for the front end, and Firebase for the back end. Also all images were generated uniquely using AI for this website</p>
             <p>I love creating things and this was an exercise in making a quick webapp that uses a data base.</p>
         </div>
       </section>
