@@ -66,7 +66,14 @@ const Todo = () => {
           username: filteredUserName,
           timestamp: serverTimestamp()
         })
-        // window.location.reload();
+        console.log(todos.length);
+        if(todos.length === 9)
+        {
+          window.location.assign("#/campfire-stick-history")
+          window.location.reload();
+        }
+        else
+          window.location.reload();
       } catch (err) {
         console.log(err);
       }

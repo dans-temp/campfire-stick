@@ -78,7 +78,6 @@ const Todo = () => {
                     {todoArray.map((todoItem, itemIndex) => (
                         <div className="todo-list" key={itemIndex}>
                         <div className="todo-item">
-                        {console.log(todoItem)}
                             <span>
                             &nbsp;{todoItem.todo}<br />
                             </span>
