@@ -17,9 +17,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/campfire-stick" element={<HomePage />} />
-          <Route path="/#/campfire-stick/todo" element={<Todo />} />
-          <Route path="/#/campfire-stick/about" element={<About />} />
-          <Route path="/#/campfire-stick/history" element={<History />} />
+          <Route path="/campfire-stick-todo" element={<Todo />} />
+          <Route path="/campfire-stick-about" element={<About />} />
+          <Route path="/campfire-stick-history" element={<History />} />
           {/* Add more routes for additional pages */}
         </Routes>
       </div>

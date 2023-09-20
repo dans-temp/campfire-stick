@@ -14,17 +14,17 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to="/#/campfire-stick/history">
+            <Link to="/campfire-stick-history">
               <div>History</div>
             </Link>
           </li>
           <li>
-            <Link to="/#/campfire-stick/todo">
+            <Link to="/campfire-stick-todo">
               <div>Story</div>
             </Link>
           </li>
           <li>
-            <Link to="/#/campfire-stick/about">
+            <Link to="/campfire-stick-about">
               <div>About</div>
             </Link>
           </li>
