@@ -9,7 +9,7 @@ function HomePage() {
     <div className="landing-page">
       <header className="header">
         <h1 className='rye-font redwood-color'>Learn More</h1>
-        <p>The story of this website</p>
+        <p>The Story of This Website</p>
       </header>
       <section className="about-cont">
           <div className="about-box">
