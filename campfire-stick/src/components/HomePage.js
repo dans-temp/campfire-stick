@@ -13,7 +13,7 @@ function HomePage() {
     <div className="landing-page">
       <header className="header">
         <h1 className='rye-font redwood-color'>Campfire Stick</h1>
-        <p>An Online Comunity Storytelling Website</p>
+        <p>An Online Community Storytelling Website</p>
       </header>
       <section className="features">
         <Link to="/history">
