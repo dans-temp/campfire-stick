@@ -66,7 +66,7 @@ const Todo = () => {
           username: filteredUserName,
           timestamp: serverTimestamp()
         })
-        window.location.reload();
+        // window.location.reload();
       } catch (err) {
         console.log(err);
       }
