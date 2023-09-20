@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/campfire-stick/static/css/main.8199b16c.css",
-    "main.js": "/campfire-stick/static/js/main.59e8028b.js",
+    "main.js": "/campfire-stick/static/js/main.fa09e8be.js",
     "static/js/787.60ad13ce.chunk.js": "/campfire-stick/static/js/787.60ad13ce.chunk.js",
     "static/media/2.png": "/campfire-stick/static/media/2.2c2251f7c003653bee9e.png",
     "static/media/1.png": "/campfire-stick/static/media/1.e103becd63d382257b26.png",
@@ -10,11 +10,11 @@
     "static/media/3.png": "/campfire-stick/static/media/3.37388da2c1efe5ab79c6.png",
     "index.html": "/campfire-stick/index.html",
     "main.8199b16c.css.map": "/campfire-stick/static/css/main.8199b16c.css.map",
-    "main.59e8028b.js.map": "/campfire-stick/static/js/main.59e8028b.js.map",
+    "main.fa09e8be.js.map": "/campfire-stick/static/js/main.fa09e8be.js.map",
     "787.60ad13ce.chunk.js.map": "/campfire-stick/static/js/787.60ad13ce.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8199b16c.css",
-    "static/js/main.59e8028b.js"
+    "static/js/main.fa09e8be.js"
   ]
 }
