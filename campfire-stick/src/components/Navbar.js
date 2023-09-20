@@ -14,7 +14,7 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to="/campfire-stick/">
+            <Link to="/campfire-stick/history">
               <div>History</div>
             </Link>
           </li>
@@ -25,7 +25,7 @@ function Navbar() {
           </li>
           <li>
             <Link to="/campfire-stick/about">
-              <a href="/campfire-stick/about">About</a>
+              <div>About</div>
             </Link>
           </li>
 

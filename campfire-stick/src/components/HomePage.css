@@ -5,13 +5,6 @@
   background-color: rgb(164, 118, 118);
 }
 
-.header {
-  background-color: rgb(54, 54, 54);;
-  color: rgb(245, 245, 202);
-  padding: 2rem;
-  border: 10px solid #a42e2e;
-}
-
 .features {
   display: flex;
   justify-content: space-between;
@@ -22,7 +15,7 @@
 .feature {
     flex: 1;
     padding: 1rem;
-    border: 5px solid #a42e2e;
+    border: 8px solid rgb(245, 245, 202);;
     color: rgb(245, 245, 202);
     margin: 0 2rem; /* Reduce horizontal margin to decrease space between features */
     border-radius: 5px;
@@ -47,7 +40,6 @@
   .about-cont {
     display: flex;
     justify-content: space-between;
-    margin-top: 2rem;
     box-sizing: content-box;
     flex-direction: column; /* Display features vertically */
     align-items: center; /* Center-align features on smaller screens */
@@ -56,16 +48,31 @@
   .about-box {
     flex: 1;
     padding: 1rem;
-    border: 5px solid #a42e2e;
     color: rgb(245, 245, 202);
-    margin: 0 2rem; /* Reduce horizontal margin to decrease space between features */
-    border-radius: 5px;
     background-color: rgb(54, 54, 54);
     text-align: center; /* Center the content horizontally */
     width: 80%; 
     transition: transform 0.3s ease; /* Add a slow zoom transition */
-    margin: 0 0 1rem;
+    border: 8px solid rgb(245, 245, 202);
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
+
+  .about-img {
+    justify-content: left;
+    display: flex;
+    border: 8px solid rgb(245, 245, 202);
+  }
+
+  .about-img img {
+    width: 100%;
+  }
+
+  .marg-up-down {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
 
   @media screen and (max-width: 768px) {
     .features {

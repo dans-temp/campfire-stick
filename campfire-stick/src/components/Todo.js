@@ -1,8 +1,6 @@
 import './Todo.css';
 import React, { useState, useEffect } from 'react'
 import { collection, addDoc, serverTimestamp, getDocs, doc, deleteDoc, orderBy, query } from 'firebase/firestore'
-
-
 import { db } from '../services/firebase.config'
 
 const Todo = () => {
@@ -10,6 +8,7 @@ const Todo = () => {
   const [createTodo, setCreateTodo] = useState("")
   const [userName, setUserName] = useState("")
   const [todos, setTodo] = useState([]);
+  const [loadingPage, setLoadingPage] = useState(true);
   const [error, setError] = useState('');
   const collectionRef = collection(db, 'todo');
 
@@ -19,7 +18,24 @@ const Todo = () => {
       const q = query(collectionRef, orderBy('timestamp'))
       await getDocs(q).then((todo) => {
         let todoData = todo.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-        setTodo(todoData)
+        let i = 0;
+        //return the current active story
+        const lastElements = [];
+        for (todo of todoData)
+        {
+          if(i === 10)
+          {
+            i = 0;
+            lastElements.splice(0);
+          }
+          i++;
+          lastElements.push(todo);
+        }
+        setLoadingPage(false);
+        if(lastElements.length !== 10)
+        {
+          setTodo(lastElements);
+        }
       }).catch((err) => {
         console.log(err);
       })
@@ -32,18 +48,22 @@ const Todo = () => {
   //Add Todo Handler
   const submitTodo = async (e) => {
     e.preventDefault();
-
-    if(userName.length < 3 || createTodo < 3)
+    if(userName.replace(/\s/g, '').length < 3 || createTodo.replace(/\s/g, '').length < 3)
     {
+      console.log('err');
      setError('Your name and story must be at least 3 characters long');
     }
     else
     {
       setError('');
+      const badWords = require('./BadWords.js');
+      const regex = new RegExp(badWords.join('|'), 'gi');
+      const filteredString = createTodo.replace(regex, (match) => '*'.repeat(match.length));
+      const filteredUserName = userName.replace(regex, (match) => '*'.repeat(match.length));
       try {
         await addDoc(collectionRef, {
-          todo: createTodo,
-          username: userName,
+          todo: filteredString,
+          username: filteredUserName,
           timestamp: serverTimestamp()
         })
         window.location.reload();
@@ -53,70 +73,61 @@ const Todo = () => {
     }
   }
 
-
-
-  //Delete Handler
-  const deleteTodo = async (id) => {
-    try {
-
-      if (window.confirm("Are you sure you want to delete this Task!")) {
-        const documentRef = doc(db, "todo", id);
-        await deleteDoc(documentRef)
-        window.location.reload()
-      }
-
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
-
   return (
     <>
-    <div className='bg'>
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
- 
-              <div className="card-body center-button">
-                <button
-                  data-bs-toggle="modal"
-                  data-bs-target="#addModal"
-                  type="button"
-                  className="btn button">Add To Story
-                </button>
-              </div>
+    <div className="container">
+      <div className="row">
+        <div className="col-md-12">
+        <header className="header marg-up-down">
+                <h1 className='rye-font redwood-color'>The Current Story</h1>
+                <p>Add To The Current Story Being Told</p>
+            </header>
+            <div className="card-body center-button">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#addModal"
+                type="button"
+                className="btn button">Add To Story
+              </button>
+            </div>
 
-                {todos.map(({ todo, id, username, timestamp }) =>
-                  <div className="card card-white">
-                    <div className="card-body">
-                      <div className="todo-list" key={id}>
-                        <div className="todo-item">
-                          <span>
-                            &nbsp;{todo}<br />
-                            
-                          </span>
-                          <button
-                            type="button"
-                            className="btn btn-danger float-end"
-                            onClick={() => deleteTodo(id)}
-                          >Delete</button>
-                          <i className="float-end">- {username}, {new Date(timestamp.seconds * 1000).toLocaleString()}</i>
-                        </div>
+              {/* display text if no todos */}
+              {(todos.length <= 0 && !loadingPage) && (
+                <div className="card">
+                  <div className="card-body">
+                    <div className="todo-list">
+                      <div className="todo-item start-story">
+                        <span>
+                          &nbsp;There are no messages in this story yet.  Why don't you start things off for us?<br/>
+                        </span>
                       </div>
+                    </div>
                   </div>
-              </div>
-                )}
+                </div>
+              )}
+              {todos.map(({ todo, id, username, timestamp }) =>
+                <div className="card">
+                  <div className="card-body">
+                    <div className="todo-list" key={id}>
+                      <div className="todo-item">
+                        <span>
+                          &nbsp;{todo}<br/>
+                        </span>
+                        <i className="float-end">- {username}, {new Date(timestamp.seconds * 1000).toLocaleString()}</i>
+                      </div>
+                    </div>
+                </div>
+            </div>
+              )}
 
-              <div className="card-body center-button">
-                <button
-                  data-bs-toggle="modal"
-                  data-bs-target="#addModal"
-                  type="button"
-                  className="btn button">Add To Story
-                </button>
-              </div>
-          </div>
+            <div className="card-body center-button">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#addModal"
+                type="button"
+                className="btn button">Add To Story
+              </button>
+            </div>
         </div>
       </div>
     </div>

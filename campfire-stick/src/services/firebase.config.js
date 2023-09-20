@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 var firebaseConfig = {
-    apiKey: "AIzaSyBNOfps86CdPkjPaxVMxaQ0WK2leYAl5jc",
+    apiKey: process.env.REACT_APP_API_KEY,
     authDomain: "campfire-stick-db.firebaseapp.com",
     projectId: "campfire-stick-db",
     storageBucket: "campfire-stick-db.appspot.com",

@@ -17,12 +17,6 @@ body{
 
 }
 
-.float-end {
-  color: #ddd;
-  transition: all ease-in-out 0.2s;
-  font-size: 14px;
-  padding-top: 12px;
-}
 
 div.checker {
   width: 18px;

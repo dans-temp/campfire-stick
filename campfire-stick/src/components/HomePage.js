@@ -6,6 +6,8 @@ import image2 from '../assets/2.png';
 import image3 from '../assets/3.png';
 import { Link } from 'react-router-dom';
 
+console.log( process.env.REACT_APP_API_KEY);
+
 function HomePage() {
   return (
     <div className="landing-page">
@@ -14,7 +16,7 @@ function HomePage() {
         <p>An Online Comunity Storytelling Website</p>
       </header>
       <section className="features">
-        <Link to="/campfire-stick/">
+        <Link to="/campfire-stick/history">
           <div className="feature">
             <div className="feature-image">
               <img src={image1} alt="Feature 1" />
