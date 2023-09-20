@@ -6,7 +6,7 @@ import image2 from '../assets/2.png';
 import image3 from '../assets/3.png';
 import { Link } from 'react-router-dom';
 
-console.log( process.env.REACT_APP_API_KEY);
+
 
 function HomePage() {
   return (
