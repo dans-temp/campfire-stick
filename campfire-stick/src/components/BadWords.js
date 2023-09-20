@@ -284,7 +284,6 @@ const badWords = [
 "quim",
 "raghead",
 "raging boner",
-"rape",
 "raping",
 "rapist",
 "rectum",
