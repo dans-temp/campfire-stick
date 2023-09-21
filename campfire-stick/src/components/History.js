@@ -55,7 +55,7 @@ const Todo = () => {
           <div className="col-md-12">
             <header className="header marg-up-down">
                 <h1 className='rye-font redwood-color'>History</h1>
-                <p>A List Of All The Completed Stories Told</p>
+                <p>A List of All The Completed Stories Told</p>
             </header>
                 {/* display text if no todos */}
                 {(todos.length <= 0 && !loadingPage) && (
@@ -82,7 +82,7 @@ const Todo = () => {
                             &nbsp;{todoItem.todo}<br />
                             </span>
                             <i className="float-end-history">
-                            - {todoItem.username}, {new Date(todoItem.timestamp * 1000).toLocaleString()}
+                            - {todoItem.username}, {new Date(todoItem.timestamp.seconds * 1000).toLocaleString()}
                             </i>
                         </div>
                         </div>
